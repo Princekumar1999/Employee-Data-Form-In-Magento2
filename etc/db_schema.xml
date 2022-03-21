@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="employee_data" resource="default" engine="innodb"
+           comment="Employee Table may contains employees data">
+        <column xsi:type="int" name="emp_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Employee ID"/>
+        <column xsi:type="varchar" name="emp_name" nullable="false" length="30"
+                comment="Employee Name"/>
+        <column xsi:type="varchar" name="emp_email" nullable="false" length="30"
+                comment="Employee Email"/>
+        <column xsi:type="int" name="emp_contact" nullable="false"
+                        comment="Employee Contact"/>
+        <column xsi:type="varchar" name="emp_address" nullable="false" length="30"
+                        comment="Employee Address"/>
+        <column xsi:type="int" name="emp_age" nullable="false"
+                        comment="Employee Age"/>
+        <column xsi:type="varchar" name="emp_gender" nullable="false" length="30"
+                        comment="Employee Gender"/>
+        <column xsi:type="varchar" name="emp_blood_group" nullable="false" length="30"
+                                comment="Employee Blood Group"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="emp_id"/>
+        </constraint>
+    </table>
+</schema>

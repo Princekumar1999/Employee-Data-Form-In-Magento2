@@ -1,0 +1,17 @@
+{
+    "employee_data": {
+        "column": {
+            "emp_id": true,
+            "emp_name": true,
+            "emp_email": true,
+            "emp_contact": true,
+            "emp_address": true,
+            "emp_age": true,
+            "emp_gender": true,
+            "emp_blood_group": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,72 @@
+<?php
+/**
+ * @var $block \Prince\Employee\Block\Display
+ */
+
+$employees = $block->getAllEmployees();
+?>
+<?php if (count($employees) > 0): ?>
+    <table border="1">
+        <tr>
+            <th><?= __("ID") ?></th>
+            <th><?= __("Name") ?></th>
+            <th><?= __("Email") ?></th>
+            <th><?= __("Contact") ?></th>
+            <th><?= __("Address") ?></th>
+            <th><?= __("Age") ?></th>
+            <th><?= __("Gender") ?></th>
+            <th><?= __("Blood Group") ?></th>
+            <th><?= __("Edit/Delete") ?></th>
+        </tr>
+        <?php foreach ($employees as $employee): ?>
+            <tr>
+                <td><?= $employee->getEmpId() ?></td>
+                <td><?= $employee->getEmpName() ?></td>
+                <td><?= $employee->getEmpEmail() ?></td>
+                <td><?= $employee->getEmpContact() ?></td>
+                <td><?= $employee->getEmpAddress() ?></td>
+                <td><?= $employee->getEmpAge() ?></td>
+                <td><?= $employee->getEmpGender() ?></td>
+                <td><?= $employee->getEmpBloodGroup() ?></td>
+                <td><a href="<?= $block->getEditPageUrl()?>">Edit </a><a href="<?= $block->getDeleteUrl()?>">Delete</a></td><!-- todo Add the functionality of Edit and Delete Hero -->
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php else: ?>
+    <h1 style="color: red"><?= __("Employee data should be inserted here!! :(") ?></h1>
+<?php endif; ?>
+<hr />
+<form method="post" action="<?= $block->getPostUrl() ?>">
+    <fieldset style="margin: 0 auto; width: 50%">
+        <div>
+            <label for="emp_name"><?= __("Name") ?></label>
+            <input type="text" name="emp_name" required/>
+        </div>
+        <div>
+            <label for="emp_email"><?= __("Email") ?></label>
+            <input type="text" name="emp_email" required/>
+        </div>
+        <div>
+            <label for="emp_contact"><?= __("Contact") ?></label>
+            <input type="text" name="emp_contact" required/>
+        </div>
+        <div>
+            <label for="emp_address"><?= __("Address") ?></label>
+            <input type="text" name="emp_address" required/>
+        </div>
+        <div>
+            <label for="emp_age"><?= __("Age") ?></label>
+            <input type="text" name="emp_age" required/>
+        </div>
+        <div>
+            <label for="emp_gender"><?= __("Gender") ?></label>
+            <input type="text" name="emp_gender" required/>
+        </div>
+
+        <div>
+            <label for="emp_blood_group"><?= __("Blood Group") ?></label>
+            <input type="text" name="emp_blood_group" required/>
+        </div>
+        <input type="submit" value="<?= __("Add Employee") ?>" />
+    </fieldset>
+</form>
